@@ -11,7 +11,7 @@
 sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
 # 替换默认Argon主题
-sudo rm -rf openwrt/package/lean/luci-theme-argon
+rm -rf package/lean/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 # 添加第三方软件包
