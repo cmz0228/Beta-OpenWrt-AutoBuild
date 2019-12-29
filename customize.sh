@@ -8,10 +8,10 @@
 #=================================================
 
 # 定制默认IP
-sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
+# sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
 # 添加LEAN软件包
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package/lede
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean package
 
 # 替换默认Argon主题
 # rm -rf package/lede/luci-theme-argon
