@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: OpenWrt-x86-64-Actions单文件
+name: OpenWrt-x86-64-Actions
 
 on:
 # 定时触发
@@ -61,10 +61,12 @@ jobs:
         REPO_BRANCH: master
       run:git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-#==================软件包定制=======================
-
     - name: 更新软件包
-      run: |
+      run: 
+        #
+        #==================软件包定制=======================
+        #
+
         # 定制默认IP
         sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
@@ -77,8 +79,9 @@ jobs:
         # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
         # git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
-#=================软件包定制结束======================
-
+        #
+        #=================软件包定制结束======================
+        #
 
     - name: 更新源
       run: cd openwrt && ./scripts/feeds update -a
