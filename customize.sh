@@ -12,15 +12,7 @@
 # sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
 # 增加LEAN源码软件包
-cd package
-git init
-git remote add -f origin https://github.com/coolsnowwolf/lede.git
-git config core.sparsecheckout true
-echo package/lean >> .git/info/sparse-checkout
-git pull origin master
-mv package/*/ ./
-rm -Rf ./.git
-cd -
+svn co https://github.com/coolsnowwolf/lede/tree/master/package/lean
 
 # 替换默认Argon主题
 # rm -rf package/lean/luci-theme-argon
