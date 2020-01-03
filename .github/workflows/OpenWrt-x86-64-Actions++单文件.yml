@@ -63,7 +63,7 @@ jobs:
 
     - name: 更新软件包
       run: |
-        cd package
+        cd openwrt
 
         # 替换默认Argon主题
         rm -rf package/lean/luci-theme-argon
