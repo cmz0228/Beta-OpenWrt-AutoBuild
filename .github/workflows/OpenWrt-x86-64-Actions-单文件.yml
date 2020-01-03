@@ -61,12 +61,6 @@ jobs:
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: 更新源
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: 安装源
-      run: cd openwrt && ./scripts/feeds install -a
-
     - name: 更新软件包
       run: |
         #
@@ -74,7 +68,7 @@ jobs:
         #
 
         # 定制默认IP
-        #sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
+        sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
         # 替换默认Argon主题
         rm -rf package/lean/luci-theme-argon
@@ -88,6 +82,12 @@ jobs:
         #
         #=================软件包定制结束======================
         #
+
+    - name: 更新源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装源
+      run: cd openwrt && ./scripts/feeds install -a
 
     - name: 创建自定义配置文件 - OpenWrt-x86-64
       run: |
