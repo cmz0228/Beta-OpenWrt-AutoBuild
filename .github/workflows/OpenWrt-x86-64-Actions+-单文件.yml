@@ -61,6 +61,12 @@ jobs:
         REPO_BRANCH: master
       run:git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
+    - name: 更新源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装源
+      run: cd openwrt && ./scripts/feeds install -a
+
     - name: 加载自定义配置 - OpenWrt-x86-64
       run: |
         cd openwrt
@@ -69,12 +75,6 @@ jobs:
         git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
         # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
         # git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-
-    - name: 更新源
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: 安装源
-      run: cd openwrt && ./scripts/feeds install -a
 
     - name: 创建自定义配置文件 - OpenWrt-x86-64
         run: 
