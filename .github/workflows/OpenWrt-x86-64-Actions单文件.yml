@@ -64,9 +64,6 @@ jobs:
     - name: 更新软件包
         run: |
         cd package
-#
-#==================软件包定制=======================
-#
 
         # 替换默认Argon主题
         rm -rf package/lean/luci-theme-argon
@@ -76,10 +73,6 @@ jobs:
         git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
         # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
         # git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-
-#
-#=================软件包定制结束======================
-#
 
     - name: 更新源
       run: cd openwrt && ./scripts/feeds update -a
