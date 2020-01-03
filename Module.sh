@@ -20,7 +20,7 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
 # 添加Lienol软件包
-sed -i '$a https://github.com/Lienol/openwrt-package' feeds.conf.default
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 # git clone https://github.com/Lienol/openwrt-package package/openwrt-package（备用）
 
 # 删除shadowsocksr puls+
