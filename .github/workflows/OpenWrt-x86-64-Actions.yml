@@ -11,7 +11,7 @@ name: OpenWrt-x86-64-Actions
 on:
 # 定时触发
 #  schedule:
-#    - cron: 0 18 1 12 *
+#    - cron: 0 18 * * *
 
 # release触发
   release:
@@ -61,7 +61,7 @@ jobs:
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: 更新软件包
+    - name: 更新自定义软件包
       run: |
         #
         #==================软件包定制=======================
