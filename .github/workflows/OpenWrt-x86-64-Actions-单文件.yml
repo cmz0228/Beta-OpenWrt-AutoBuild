@@ -10,8 +10,8 @@ name: OpenWrt-x86-64-Actions
 
 on:
 # 定时触发
-  schedule:
-    - cron: 0 18 * * *
+#  schedule:
+#    - cron: 0 18 1 12 *
 
 # release触发
   release:
@@ -59,14 +59,13 @@ jobs:
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
-      run:git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: 更新源
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: 安装源
       run: cd openwrt && ./scripts/feeds install -a
-
 
     - name: 更新软件包
       run: |
