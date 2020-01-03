@@ -63,8 +63,6 @@ jobs:
 
     - name: 更新软件包
       run: |
-        rm -rf package/lean/luci-theme-argon
-        git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
         git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
 
     - name: 更新源
@@ -74,7 +72,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: 创建自定义配置文件 - OpenWrt-x86-64
-      run:|
+      run: |
         # OpenWrt-x86-64固件定制
         cd openwrt
         rm -f ./.config*
