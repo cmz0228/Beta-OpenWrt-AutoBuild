@@ -11,11 +11,11 @@ name: OpenWrt-x86-64-Actions
 on:
 # 定时触发
   schedule:
-    - cron: 0 18 1 12 *
+    - cron: 0 18 * * *
 
 # release触发
-#  release:
-#    types: [published]
+  release:
+    types: [published]
 
 # 点赞触发
 #  watch:
@@ -59,47 +59,38 @@ jobs:
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run:git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: 更新软件包
       run: |
-      #
-      #==================软件包定制=======================
-      #
-
-      # 定制默认IP
-      #sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
-
-      # 替换默认Argon主题
-      rm -rf package/lean/luci-theme-argon
-      git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-
-      # 添加第三方软件包
-      git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
-      # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
-      # git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-
-      #
-      #=================软件包定制结束======================
-      #
-
-    - name: 更新 feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: 安装 feeds
-      run: cd openwrt && ./scripts/feeds install -a
-
-    - name: 加载自定义配置 - OpenWrt-x86-64
-      run: |
+        #
+        #==================软件包定制=======================
+        #
         cd openwrt
+        # 定制默认IP
+        #sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
+
+        # 替换默认Argon主题
         rm -rf package/lean/luci-theme-argon
         git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+
+        # 添加第三方软件包
         git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
         # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
         # git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
+        #
+        #=================软件包定制结束======================
+        #
+
+    - name: 更新源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装源
+      run: cd openwrt && ./scripts/feeds install -a
+
     - name: 创建自定义配置文件 - OpenWrt-x86-64
-        run:|
+      run:|
         # OpenWrt-x86-64固件定制
         cd openwrt
         rm -f ./.config*
