@@ -20,12 +20,28 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
 # 添加Lienol软件包
-git clone https://github.com/Lienol/openwrt-package package/Lienol
+git clone https://github.com/Lienol/openwrt-package package/openwrt-package
 
 # 删除shadowsocksr puls+
-rm -rf package/lean/luci-app-ssr-plus	
-rm -rf package/lean/luci-app-ssrserver-python
+# rm -rf package/lean/luci-app-ssr-plus	
+# rm -rf package/lean/luci-app-ssrserver-python
+# rm -rf package/lean/luci-app-verysync
+# rm -rf package/lean/shadowsocksr-libev
+# rm -rf package/lean/v2ray
+
+
+rm -rf package/openwrt-package/lienol/v2ray
+rm -rf package/openwrt-package/lienol/openssl1.1
+rm -rf package/openwrt-package/lienol/trojan
+rm -rf package/openwrt-package/lienol/ipt2socks
+rm -rf package/openwrt-package/lienol/shadowsocks-libev-new
+rm -rf package/openwrt-package/lienol/shadowsocksr-libev
+rm -rf package/openwrt-package/lienol/pdnsd-alt
+rm -rf package/openwrt-package/package/verysync
+rm -rf package/openwrt-package/luci-app-verysync
+rm -rf package/lean/kcptun
+rm -rf package/lean/luci-app-kodexplorer
+rm -rf package/lean/luci-app-pppoe-relay
+rm -rf package/lean/luci-app-pptp-server
 rm -rf package/lean/luci-app-v2ray-server
-rm -rf package/lean/luci-app-verysync
-rm -rf package/lean/shadowsocksr-libev
-rm -rf package/lean/v2ray
+
