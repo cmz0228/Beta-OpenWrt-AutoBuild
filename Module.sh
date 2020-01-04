@@ -29,6 +29,8 @@ git clone https://github.com/Lienol/openwrt-package package/openwrt-package
 # rm -rf package/lean/shadowsocksr-libev
 # rm -rf package/lean/v2ray
 
+./scripts/feeds clean
+./scripts/feeds update -a
 
 rm -rf package/openwrt-package/lienol/v2ray
 rm -rf package/openwrt-package/lienol/openssl1.1
@@ -45,3 +47,4 @@ rm -rf package/lean/luci-app-pppoe-relay
 rm -rf package/lean/luci-app-pptp-server
 rm -rf package/lean/luci-app-v2ray-server
 
+./scripts/feeds install -a
