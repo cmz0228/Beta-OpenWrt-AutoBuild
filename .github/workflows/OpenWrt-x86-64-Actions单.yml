@@ -14,8 +14,8 @@ on:
 #    - cron: 0 18 * * *
 
 # release触发
-  release:
-    types: [published]
+#  release:
+#    types: [published]
 
 # 点赞触发
 #  watch:
@@ -27,8 +27,8 @@ on:
 #      - master
 
 # config触发
-#  paths:
-#    - 'x86_64.config'
+  paths:
+    - 'x86_64.config'
 
 jobs:
   build:
@@ -61,6 +61,11 @@ jobs:
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
+    - name: 固件参数
+      run: |
+        # 定制默认IP
+        sed -i 's/192.168.1.1/12.0.0.1/g' package/base-files/files/bin/config_generate
+
     - name: 更新自定义软件包
       run: |
         cd openwrt
@@ -68,9 +73,6 @@ jobs:
         #
         # ========================软件包定制========================
         #
-
-        # 定制默认IP
-        sed -i 's/192.168.1.1/12.0.0.1/g' openwrt/package/base-files/files/bin/config_generate
 
         # 替换默认Argon主题
         rm -rf package/lean/luci-theme-argon
