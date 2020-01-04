@@ -22,13 +22,9 @@ on:
 #    types: [started]
 
 # 编辑触发
-#  push:
-#    branches: 
-#      - master
-
-# config触发
-#  paths:
-#    - 'x86_64.config'
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
@@ -82,7 +78,6 @@ jobs:
         git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
         # 添加第三方软件包
-        cd openwrt/package/openwrt-packages
         git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
         git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
         git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
