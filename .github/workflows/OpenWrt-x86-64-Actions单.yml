@@ -10,8 +10,8 @@ name: OpenWrt-x86-64-Actions单
 
 on:
 # 定时触发
-#  schedule:
-#    - cron: 0 18 * * *
+  schedule:
+    - cron: 0 15 * * *
 
 # release触发
 #  release:
@@ -27,8 +27,8 @@ on:
 #      - master
 
 # config触发
-  paths:
-    - 'x86_64.config'
+#  paths:
+#    - 'x86_64.config'
 
 jobs:
   build:
