@@ -6,16 +6,16 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: OpenWrt-x86-64-Actions单文件版本
+name: OpenWrt-x86-64-Actions单
 
 on:
 # 定时触发
-  schedule:
-    - cron: 0 18 5 * *
+#  schedule:
+#    - cron: 0 18 * * *
 
 # release触发
-#  release:
-#    types: [published]
+  release:
+    types: [published]
 
 # 点赞触发
 #  watch:
@@ -25,6 +25,10 @@ on:
 #  push:
 #    branches: 
 #      - master
+
+# config触发
+#  paths:
+#    - 'x86_64.config'
 
 jobs:
   build:
@@ -57,14 +61,9 @@ jobs:
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: 更新源
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: 安装源
-      run: cd openwrt && ./scripts/feeds install -a
-
     - name: 更新自定义软件包
       run: |
+        cd openwrt
 
         #
         # ========================软件包定制========================
@@ -85,6 +84,12 @@ jobs:
         #
         # ======================软件包定制结束======================
         #
+
+    - name: 更新源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装源
+      run: cd openwrt && ./scripts/feeds install -a
 
     - name: 创建自定义配置文件 - OpenWrt-x86-64
       run: |
