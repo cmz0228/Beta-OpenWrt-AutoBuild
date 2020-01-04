@@ -10,21 +10,21 @@ name: OpenWrt-x86-64-Actions单文件版本
 
 on:
 # 定时触发
-#  schedule:
-#    - cron: 0 18 * * *
+  schedule:
+    - cron: 0 18 5 * *
 
 # release触发
-  release:
-    types: [published]
+#  release:
+#    types: [published]
 
 # 点赞触发
 #  watch:
 #    types: [started]
 
 # 编辑触发
-  push:
-    branches: 
-      - master
+#  push:
+#    branches: 
+#      - master
 
 jobs:
   build:
