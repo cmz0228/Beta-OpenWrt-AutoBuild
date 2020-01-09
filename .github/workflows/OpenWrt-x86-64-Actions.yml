@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: OpenWrt-x86-64-Actions双
+name: OpenWrt-x86-64-Actions-原版
 
 on:
 # 定时触发
@@ -57,8 +57,8 @@ jobs:
 
     - name: 克隆源代码
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
-        REPO_BRANCH: master
+        REPO_URL: https://github.com/openwrt/openwrt
+        REPO_BRANCH: openwrt-19.07
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: 更新源
