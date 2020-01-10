@@ -106,6 +106,8 @@ CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-smartinfo=y
 EOF
 
+# 常用LuCI插件选择:
+cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE 穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE 服务器
 # CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan 服务器
@@ -121,7 +123,7 @@ CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用（UPnP）
 CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEther VPN 服务器
 EOF
 
-# 常用LuCI插件选择:
+# 文件共享插件选择:
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
