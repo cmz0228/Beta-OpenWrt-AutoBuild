@@ -159,8 +159,10 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
+# CONFIG_FEED_darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
+# CONFIG_DEFAULT_luci-theme-bootstrap-mod is not set
 CONFIG_PACKAGE_luci-theme-netgear-mc=y
 CONFIG_PACKAGE_luci-theme-argon-mod=y
 EOF
