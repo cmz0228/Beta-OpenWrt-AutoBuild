@@ -135,7 +135,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
 # CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
-# CONFIG_PACKAGE_pptpd is not set #PPTP VPN 服务器
+# CONFIG_PACKAGE_luci-app-pptpd is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
