@@ -6,16 +6,16 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: OpenWrt-x86-64-Actions-原版
+name: OpenWrt-x86-64-Actions
 
 on:
 # 定时触发
-#  schedule:
-#    - cron: 0 18 * * *
+  schedule:
+    - cron: 0 18 * * *
 
 # release触发
-  release:
-    types: [published]
+#  release:
+#    types: [published]
 
 # 点赞触发
 #  watch:
@@ -85,11 +85,11 @@ jobs:
         echo -e "$(nproc) thread compile"
         make -j$(nproc)
 
-    - name: 多线程编译失败，尝试单线程编译
-      if: failure()
-      run: |
-        cd openwrt
-        make -j1 V=s
+#    - name: 多线程编译失败，尝试单线程编译
+#      if: failure()
+#      run: |
+#        cd openwrt
+#        make -j1 V=s
 
 #    - name: 上传BIN目录
 #      uses: actions/upload-artifact@master
