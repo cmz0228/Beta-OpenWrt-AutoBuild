@@ -15,9 +15,6 @@ git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-ser
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
-
-
-
 #创建自定义配置文件 - OpenWrt-x86-64
 
 rm -f ./.config*
@@ -88,8 +85,6 @@ EOF
 # 参数定制:
 cat >> .config <<EOF
 CONFIG_TARGET_PREINIT_IP="10.0.0.1"
-# CONFIG_TARGET_PREINIT_NETMASK="255.255.255.0"
-# CONFIG_TARGET_PREINIT_BROADCAST="192.168.1.255"
 EOF
 
 # 多文件系统支持:
