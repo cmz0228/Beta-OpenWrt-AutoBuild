@@ -130,6 +130,14 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_kcptun-client
 CONFIG_PACKAGE_haproxy=y
 CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_v2ray=y
+CONFIG_PACKAGE_trojan=y
+CONFIG_PACKAGE_brook=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_shadowsocks-libev-config=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
+CONFIG_PACKAGE_shadowsocksr-libev-alt=y
 EOF
 
 # 常用LuCI插件选择:
