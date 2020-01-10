@@ -127,7 +127,6 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-# CONFIG_PACKAGE_luci-app-kcptun=y
 CONFIG_PACKAGE_kcptun-client
 CONFIG_PACKAGE_haproxy=y
 EOF
