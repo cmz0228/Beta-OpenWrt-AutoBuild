@@ -146,6 +146,8 @@ CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
+CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
+CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 EOF
 
 # 文件共享插件选择:
