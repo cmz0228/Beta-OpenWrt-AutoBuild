@@ -174,7 +174,6 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_FEED_darkmatter=y
 CONFIG_PACKAGE_luci-theme-darkmatter=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 CONFIG_PACKAGE_luci-theme-netgear-mc=y
