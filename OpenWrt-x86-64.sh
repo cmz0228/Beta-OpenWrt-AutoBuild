@@ -85,6 +85,13 @@ CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 EOF
 
+# 参数定制:
+# cat >> .config <<EOF
+# CONFIG_TARGET_PREINIT_IP="192.168.1.1"
+# CONFIG_TARGET_PREINIT_NETMASK="255.255.255.0"
+# CONFIG_TARGET_PREINIT_BROADCAST="192.168.1.255"
+# EOF
+
 # 多文件系统支持:
 # cat >> .config <<EOF
 # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -172,10 +179,9 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-# CONFIG_FEED_darkmatter is not set
-# CONFIG_PACKAGE_luci-theme-darkmatter is not set
-# CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
-# CONFIG_DEFAULT_luci-theme-bootstrap-mod is not set
+CONFIG_FEED_darkmatter=y
+CONFIG_PACKAGE_luci-theme-darkmatter=y
+CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 CONFIG_PACKAGE_luci-theme-netgear-mc=y
 CONFIG_PACKAGE_luci-theme-argon-mod=y
 EOF
@@ -189,14 +195,6 @@ CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
-EOF
-
-# 其他软件包（不知道干吗的）:
-cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-unbound is not set #Unbound DNS解析器
-# CONFIG_PACKAGE_meson is not set
-# CONFIG_PACKAGE_vpn-policy-routing is not set
-# CONFIG_PACKAGE_vpnbypass is not set
 EOF
 
 # 
