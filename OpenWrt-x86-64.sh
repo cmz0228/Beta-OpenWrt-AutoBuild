@@ -159,7 +159,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
 # CONFIG_PACKAGE_luci-app-autosamba=y #网络共享
-# CONFIG_PACKAGE_samba36-server=y #网络共享
+# CONFIG_PACKAGE_samba36-server is not set #网络共享
 EOF
 
 # LuCI主题:
