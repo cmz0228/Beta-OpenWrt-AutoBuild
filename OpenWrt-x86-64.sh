@@ -161,6 +161,13 @@ CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
+CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
+CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
+CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
+CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
+CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
+CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
+CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 EOF
 
 # 网络共享:
