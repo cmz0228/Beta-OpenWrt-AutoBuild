@@ -153,11 +153,13 @@ CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 EOF
 
-# 文件共享插件选择:
+# 网络共享:
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
-# CONFIG_PACKAGE_luci-app-autosamba is not set #网络共享
+# CONFIG_PACKAGE_luci-app-samba is not set #网络共享
+# CONFIG_PACKAGE_luci-app-autosamba=y #网络共享
+# CONFIG_PACKAGE_samba36-server=y #网络共享
 EOF
 
 # LuCI主题:
