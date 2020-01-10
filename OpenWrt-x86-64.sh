@@ -125,8 +125,9 @@ CONFIG_PACKAGE_luci-app-webadmin=y #Web 管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
-CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用(UPnP)
+CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
+CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 EOF
 
 # 文件共享插件选择:
@@ -153,6 +154,14 @@ CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
+EOF
+
+# 其他软件包（不知道干吗的）:
+cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-unbound is not set #Unbound DNS解析器
+# CONFIG_PACKAGE_meson is not set
+# CONFIG_PACKAGE_vpn-policy-routing is not set
+# CONFIG_PACKAGE_vpnbypass is not set
 EOF
 
 # 
