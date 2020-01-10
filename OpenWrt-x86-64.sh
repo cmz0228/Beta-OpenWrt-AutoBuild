@@ -129,6 +129,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_kcptun-client
 CONFIG_PACKAGE_haproxy=y
+CONFIG_PACKAGE_chinadns-ng=y
 EOF
 
 # 常用LuCI插件选择:
@@ -150,7 +151,6 @@ CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
-CONFIG_PACKAGE_chinadns-ng=y #china服务
 EOF
 
 # 网络共享:
