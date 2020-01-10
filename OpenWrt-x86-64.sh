@@ -1,18 +1,9 @@
   
 #!/bin/bash
 #=================================================
-# Description: DIY script
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================
 
 # 定制默认IP
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-
-# 替换默认Argon主题
-# rm -rf package/lean/luci-theme-argon
-# git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 # 添加第三方软件包
 git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
@@ -78,9 +69,82 @@ cat >> .config <<EOF
 CONFIG_TARGET_IMAGES_GZIP=y
 EOF
 
+# 编译UEFI固件:
+# cat >> .config <<EOF
+# CONFIG_EFI_IMAGES=y
+# EOF
+
+# IPv6支持:
+cat >> .config <<EOF
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+EOF
+
+# 多文件系统支持:
+# cat >> .config <<EOF
+# CONFIG_PACKAGE_kmod-fs-nfs=y
+# CONFIG_PACKAGE_kmod-fs-nfs-common=y
+# CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+# CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+# CONFIG_PACKAGE_kmod-fs-ntfs=y
+# CONFIG_PACKAGE_kmod-fs-squashfs=y
+# EOF
+
+# USB3.0支持:
+# cat >> .config <<EOF
+# CONFIG_PACKAGE_kmod-usb-ohci=y
+# CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+# CONFIG_PACKAGE_kmod-usb2=y
+# CONFIG_PACKAGE_kmod-usb2-pci=y
+# CONFIG_PACKAGE_kmod-usb3=y
+# EOF
+
 # 第三方插件选择:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-serverchan=y
+CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
+# CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-smartinfo=y
+EOF
+
+# CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE 穿透
+# CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE 服务器
+# CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan 服务器
+# CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray 服务器
+# CONFIG_PACKAGE_pptpd is not set #PPTP VPN 服务器
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
+CONFIG_PACKAGE_luci-app-webadmin=y #Web 管理页面设置
+CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
+CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
+CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
+CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用（UPnP）
+CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEther VPN 服务器
+EOF
+
+# 常用LuCI插件选择:
+cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
+# CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
+# CONFIG_PACKAGE_luci-app-samba is not set #网络共享
+EOF
+
+# LuCI主题:
+cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-theme-darkmatter is not set
+# CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
+CONFIG_PACKAGE_luci-theme-netgear-mc=y
+CONFIG_PACKAGE_luci-theme-argon-mod=y
+EOF
+
+# 常用软件包:
+cat >> .config <<EOF
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_htop=y
+CONFIG_PACKAGE_nano=y
+# CONFIG_PACKAGE_screen=y
+# CONFIG_PACKAGE_tree=y
+# CONFIG_PACKAGE_vim-fuller=y
+CONFIG_PACKAGE_wget=y
 EOF
 
 # 
