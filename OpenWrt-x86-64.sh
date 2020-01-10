@@ -176,6 +176,8 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
+# CONFIG_PACKAGE_autosamba is not set #网络共享
+# CONFIG_PACKAGE_samba36-server is not set #网络共享
 EOF
 
 # LuCI主题:
@@ -205,3 +207,5 @@ EOF
 sed -i 's/^[ \t]*//g' ./.config
 
 # 配置文件创建完成
+
+
