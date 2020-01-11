@@ -123,7 +123,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-CONFIG_PACKAGE_kcptun-client
+CONFIG_PACKAGE_kcptun-client=y
 CONFIG_PACKAGE_haproxy=y
 CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_v2ray=y
@@ -201,3 +201,4 @@ EOF
 sed -i 's/^[ \t]*//g' ./.config
 
 # 配置文件创建完成
+
