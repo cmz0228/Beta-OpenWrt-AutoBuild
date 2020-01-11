@@ -8,7 +8,7 @@
 #=================================================
 
 # 定制默认IP
-# sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 添加第三方软件包
 git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
@@ -80,11 +80,6 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-EOF
-
-# 参数定制:
-cat >> .config <<EOF
-CONFIG_TARGET_PREINIT_IP="10.0.0.1"
 EOF
 
 # 多文件系统支持:
