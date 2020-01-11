@@ -196,6 +196,17 @@ EOF
 
 # 软件包:
 cat >> .config <<EOF
+# CONFIG_PACKAGE_unbound-anchor is not set
+# CONFIG_PACKAGE_unbound-checkconf is not set
+# CONFIG_PACKAGE_unbound-control is not set
+# CONFIG_PACKAGE_unbound-control-setup is not set
+# CONFIG_PACKAGE_unbound-daemon is not set
+# CONFIG_PACKAGE_unbound-daemon-heavy is not set
+# CONFIG_PACKAGE_unbound-host is not set
+# CONFIG_PACKAGE_meson is not set
+# CONFIG_PACKAGE_meson-src is not set
+# CONFIG_PACKAGE_vpn-policy-routing is not set
+# CONFIG_PACKAGE_vpnbypass is not set
 # CONFIG_PACKAGE_luci-app-unbound is not set
 # CONFIG_PACKAGE_luci-app-vpnbypass is not set
 EOF
