@@ -194,6 +194,12 @@ CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_wget=y
 EOF
 
+# 软件包:
+cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-unbound is not set
+# CONFIG_PACKAGE_luci-app-vpnbypass is not set
+EOF
+
 # 
 # ========================固件定制部分结束========================
 # 
