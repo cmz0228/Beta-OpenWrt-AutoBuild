@@ -68,14 +68,9 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: 创建自定义配置文件 - OpenWrt-x86-64
-      env:
-        DIY_SH: 'OpenWrt-x86-64.sh'
       run: |
-        [ -e files ] && mv files openwrt/files
-        chmod +x $DIY_SH
-        cd openwrt
-        ../$DIY_SH
-        make defconfig
+        chmod +x ./ OpenWrt-x86-64.sh && ./ OpenWrt-x86-64.sh
+        cd openwrt && make defconfig
 
 #      开启SSH远程连接
 #    - name: SSH connection to Actions
