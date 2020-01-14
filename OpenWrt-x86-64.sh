@@ -198,8 +198,6 @@ EOF
 # 其他软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_autocore=y
-CONFIG_PACKAGE_boost=y
-CONFIG_PACKAGE_boost-program_options=y
 EOF
 
 # 
