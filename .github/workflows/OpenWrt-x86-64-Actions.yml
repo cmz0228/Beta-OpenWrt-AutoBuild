@@ -70,7 +70,7 @@ jobs:
     - name: 创建自定义配置文件 - OpenWrt-x86-64
       env:
         CONFIG_FILE: 'OpenWrt-x86-64.config'
-        DIY_SH: 'MOD.sh'
+        DIY_SH: 'Mod.sh'
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
