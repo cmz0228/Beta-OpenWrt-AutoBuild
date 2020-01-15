@@ -11,8 +11,9 @@
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 添加第三方软件包
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/Aslin-Ameng/luci-theme-netgear package/luci-theme-netgear
 git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
 #创建自定义配置文件 - OpenWrt-x86-64
@@ -104,7 +105,6 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
-# CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务器
 # CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
 EOF
 
@@ -138,14 +138,20 @@ CONFIG_PACKAGE_shadowsocksr-libev-alt=y
 CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 EOF
 
-# 常用LuCI插件选择:
+# 常用LuCI插件(禁用):
 cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
+# CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
 # CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
 # CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+EOF
+
+# 常用LuCI插件(启用):
+cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
@@ -178,6 +184,8 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-netgear=y
 CONFIG_PACKAGE_luci-theme-darkmatter=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 CONFIG_PACKAGE_luci-theme-netgear-mc=y
